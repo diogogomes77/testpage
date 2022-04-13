@@ -23,7 +23,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm ci
+          # npm ci
+          yarn install --immutable
 
       - name: 'Version and publish'
         env:
@@ -32,4 +33,5 @@ jobs:
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor}}@users.noreply.github.com"
 
-          npm run deploy
+          # npm run deploy
+          yarn deploy
