@@ -25,7 +25,15 @@ jobs:
               run: |
                   yarn install --immutable
 
-            - name: 'Version and publish'
+            - name: Build app
+              run: yarn build
+
+            - name: Semantic release
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+              run: npx semantic-release
+
+            - name: 'Deploy'
               env:
                   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: |
