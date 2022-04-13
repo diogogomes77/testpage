@@ -5,11 +5,11 @@ import Home from '../pages/index';
 import '@testing-library/jest-dom';
 
 describe('Home', () => {
-  it('renders a heading', () => {
-    render(<Home />);
+    it('renders a heading', () => {
+        render(<Home />);
 
-    const heading = screen.getByText('Hello World jest.');
+        const heading = screen.getByText('Hello World husky.');
 
-    expect(heading).toBeInTheDocument();
-  });
+        expect(heading).toBeInTheDocument();
+    });
 });

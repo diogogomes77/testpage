@@ -1,25 +1,44 @@
 {
-  "private": true,
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "test": "jest --watch",
-    "tests": "jest",
-    "export": "next export",
-    "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git push origin `git subtree split --prefix out`:gh-pages --force"
-  },
-  "dependencies": {
-    "next": "latest",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
-  "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "12.1.2",
-    "babel-plugin-transform-define": "^1.3.0",
-    "eslint": "8.13.0",
-    "eslint-config-next": "12.1.5",
-    "jest": "^27.5.1"
-  }
+    "private": true,
+    "scripts": {
+        "dev": "next",
+        "build": "next build",
+        "start": "next start",
+        "test": "jest --watch",
+        "tests": "jest --coverage",
+        "lint": "next lint src",
+        "prettier": "prettier src -c",
+        "lint-staged": "lint-staged --config lint-staged.js",
+        "husky-install": "husky install",
+        "export": "next export",
+        "precommit": "lint-staged",
+        "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git push origin `git subtree split --prefix out`:gh-pages --force"
+    },
+    "dependencies": {
+        "next": "latest",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^5.16.4",
+        "@testing-library/react": "12.1.2",
+        "babel-plugin-transform-define": "^1.3.0",
+        "eslint": "^8.13.0",
+        "eslint-config-next": "12.1.5",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-react": "^7.29.4",
+        "husky": "^7.0.4",
+        "jest": "^27.5.1",
+        "lint-staged": "11.1.4",
+        "prettier": "^2.6.2",
+        "tsc-files": "^1.1.3"
+    },
+    "lint-staged": {
+        "*.js": [
+            "eslint --fix"
+        ],
+        "*.{html,js}": [
+            "prettier --write"
+        ]
+    }
 }
