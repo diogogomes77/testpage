@@ -28,7 +28,7 @@ jobs:
 
             - name: Run Prettier
               run: |
-                  yarn Prettier
+                  yarn prettier
 
             - name: Run Lint
               run: |
