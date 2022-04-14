@@ -56,9 +56,10 @@
         "@semantic-release/npm",
         "@semantic-release/git"
     ],
-    "dryRun": true,
-    "ci": false,
     "release": {
+        "branches": [
+            "main"
+        ],
         "prepare": [
             "@semantic-release/changelog",
             "@semantic-release/npm",
