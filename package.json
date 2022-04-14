@@ -11,6 +11,7 @@
         "prettier": "prettier src -c",
         "lint-staged": "lint-staged --config lint-staged.js",
         "husky-install": "husky install",
+        "release": "standard-version",
         "release-major": "standard-version --release-as major",
         "export": "next export",
         "commit": "git-cz",
