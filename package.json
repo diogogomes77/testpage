@@ -1,6 +1,9 @@
 {
+    "name": "testpage",
+    "version": "0.0.0",
+    "description": "testing gh-pages and gh-actions",
+    "author": "Diogo Gomes <diogo.gomes77@gmail.com> (https://github.com/diogogomes77)",
     "private": true,
-    "version": "0.0.1",
     "scripts": {
         "dev": "next",
         "build": "next build",
